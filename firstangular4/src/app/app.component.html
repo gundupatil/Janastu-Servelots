@@ -1,0 +1,30 @@
+
+<a routerLink="/member">Members</a>
+<a routerLink="/product">Products</a>
+<app-my-component></app-my-component>
+<app-products></app-products>
+<app-members></app-members>
+<hr>
+<router-outlet></router-outlet>
+{{obj.name | uppercase}}
+<ul>
+  <li *ngFor="let danny of arr">{{danny}}</li>
+</ul>
+<p *ngIf = "isTrue; then FirstTemplate else SecondTemplate" >I am True</p>
+<ng-template #FirstTemplate>My then template</ng-template>
+<ng-template #SecondTemplate>My first else template</ng-template>
+<p *ngIf = "myName=='Danny'" >I am True</p>
+<div class="main">
+  <h1>Items List</h1>
+  <div class="addItem">
+    <input [(ngModel)] = "newItem" placeholder="Add Item" class="addText"/>
+    <button (click)="pushItem()"> Add</button>
+  </div>
+  <ul>
+    <li *ngFor= "let i of items; let ind=index">
+      {{i}}
+
+      <span (click)="removeItem(ind)">x</span>
+    </li>
+  </ul>
+</div>
